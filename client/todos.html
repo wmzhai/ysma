@@ -1,4 +1,8 @@
 
 <template name="todos">
-    <h1>todos </h1>
+    <ul>
+        {{#each todo}}
+            <li>{{name}}</li>
+        {{/each}}
+    </ul>
 </template>
