@@ -8,10 +8,13 @@ Template.todoItem.events({
         }
     },
     'keyup [name=todoItem]': function(event){
-        var documentId = this._id;
-        var todoItem = $(event.target).val();
-        Todos.update({_id:documentId},{$set:{name: todoItem}});
-        console.log("You just tapped a key on your keyboard.");
+        if( event.which == 13 || event.which == 27 ){
+            $(event.target).blur();
+        }else{
+            var documentId = this._id;
+            var todoItem = $(event.target).val();
+            Todos.update({_id:documentId},{$set:{name: todoItem}});
+        }
     },
     'keydown [name=todoItem]': function(){
         console.log("You're holding down a key on your keyboard.");
