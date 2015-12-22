@@ -1,6 +1,7 @@
 
 Template.todos.helpers({
     'todo' :function(){
-        return Todos.find({},{sort: {createAt:-1}});
+        var currentList = this._id;
+        return Todos.find({listId: currentList},{sort: {createAt:-1}});
     }
 });
