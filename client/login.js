@@ -15,3 +15,15 @@ Template.login.events({
         });
     }
 })
+
+Template.login.onCreated(function(){
+    console.log("The 'login' template was just created.");
+});
+
+Template.login.onRendered(function(){
+    console.log("The 'login' template was just rendered.");
+});
+
+Template.login.onDestroyed(function(){
+    console.log("The 'login' template was just destroyed.");
+});
