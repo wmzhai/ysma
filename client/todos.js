@@ -2,6 +2,7 @@
 Template.todos.helpers({
     'todo' :function(){
         var currentList = this._id;
-        return Todos.find({listId: currentList},{sort: {createAt:-1}});
+        var currentUser = Meteor.userId();
+        return Todos.find({listId: currentList, createdBy: currentUser},{sort: {createAt:-1}});
     }
 });
