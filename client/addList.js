@@ -3,7 +3,9 @@ Template.addList.events({
        event.preventDefault();
        var listName = $('[name=listName').val();
        Lists.insert({
-          name: listName
+           name: listName
+       },function(error, results){
+           Router.go('listPage',{_id: results});
        });
        $('[name=listName]').val('');
    }
